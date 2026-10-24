@@ -99,6 +99,13 @@ button.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--mu
 </section>
 
 <section class="slide">
+  <h2>تولدت مبارک، رؤیا! 🎂</h2>
+  <p>اعتراف می‌کنم: دیر شد. ولی کیک‌بوکسورها قانون دارند: «هر کسی که تولد یک قهرمان را دیر تبریک بگوید، یک کیک و یک عذرخواهی بدهکار است.» پس این کیک مال توست. شمع‌ها را فوت کن!</p>
+  <div class="big" id="cake">🎂</div>
+  <small id="cs">روی کیک بزن تا شمع‌ها را فوت کنی</small>
+</section>
+
+<section class="slide">
   <div class="big">🍂</div>
   <p>پاییز یعنی برگ‌های سرخ، چای داغ، و کسی که بدون هیچ دلیلی دلت را گرم می‌کند. تو برای من همان فصل پاییزی، رؤیا. حتی اگر مرا با کیک‌بوکسینگ تهدید کنی.</p>
   <button id="fin">❤️ آخرین سورپرایز</button>
@@ -173,6 +180,9 @@ run.style.transform='translate('+(Math.random()*180-90)+'px,'+(Math.random()*120
 run.addEventListener('mouseover',flee);run.addEventListener('touchstart',flee,{passive:false});
 run.onclick=function(e){if(tries<5){flee(e);return}run.style.transform='none';run.textContent='خندیدی! 😂';$('#face').textContent='🥰';
 toast('شکست خوردی! 🏆<br>مجازات: یک لبخند دیگر');confetti(e.clientX,e.clientY)};
+
+// birthday
+var cs=0;$('#cake').onclick=function(e){cs++;if(cs===1){this.textContent='🎂✨';$('#cs').textContent='آرزو کن! دوباره بزن';confetti(e.clientX,e.clientY,['🕯️','✨'],10)}else{this.textContent='🎉';$('#cs').textContent='تولدت مبارک! دیر شد ولی با عشق 🧡';confetti(e.clientX,e.clientY,['🎂','🥊','🍁','🎉','🧡'],50)}};
 
 // finale
 $('#fin').onclick=function(){confetti(innerWidth/2,innerHeight/2,['🥊','🍁','🍂','❤️','✨'],60);setTimeout(function(){confetti(innerWidth/2,innerHeight/2,['🥊','🍁','❤️'],40)},500);
